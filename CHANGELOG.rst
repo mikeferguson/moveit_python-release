@@ -2,6 +2,11 @@
 Changelog for package moveit_python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.8 (2015-03-21)
+------------------
+* expose num_attempts through kw_args
+* Contributors: Michael Ferguson
+
 0.2.7 (2014-11-19)
 ------------------
 * enable removing attached objects
