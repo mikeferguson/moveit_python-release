@@ -1,0 +1,104 @@
+ros-indigo-moveit-python (0.2.12-0trusty) trusty; urgency=high
+
+  * fixup planner id
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Sat, 11 Apr 2015 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.11-0trusty) trusty; urgency=high
+
+  * fix spelling issue in velocity scaling factor
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Wed, 08 Apr 2015 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.10-0trusty) trusty; urgency=high
+
+  * implement kwargs for pick&place interface
+  * add max_velocity_scaling_factor as kwarg
+  * allow overriding allowed_planning_time
+  * add FakeGroupInterface
+  * add clear() method to planning scene interface
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Mon, 06 Apr 2015 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.9-0trusty) trusty; urgency=high
+
+  * add rotate_pose_msg_about_origin
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Sat, 28 Mar 2015 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.8-0trusty) trusty; urgency=high
+
+  * expose num_attempts through kw_args
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Sat, 21 Mar 2015 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.7-0trusty) trusty; urgency=high
+
+  * enable removing attached objects
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Wed, 19 Nov 2014 08:00:00 -0000
+
+ros-indigo-moveit-python (0.2.6-0trusty) trusty; urgency=high
+
+  * use kw_args for group interface, add a number of args supported
+  * a couple of fixes for is_diff
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Sun, 16 Nov 2014 08:00:00 -0000
+
+ros-indigo-moveit-python (0.2.5-0trusty) trusty; urgency=high
+
+  * add scripts for dumping/loading planning scene
+  * documentation cleanup
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Wed, 09 Jul 2014 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.4-0trusty) trusty; urgency=high
+
+  * add list and remove object scripts, closes #2 <https://github.com/mikeferguson/moveit_python/issues/2>
+  * properly initialize planning scene interface, fixes #1 <https://github.com/mikeferguson/moveit_python/issues/1>
+  * add planner_id logic to move group interface
+  * remove default support name
+  * fix comment on result type
+  * add missing import
+  * upstream the retry logic
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Tue, 03 Jun 2014 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.3-0trusty) trusty; urgency=high
+
+  * fix bug in mesh generation
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Mon, 26 May 2014 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.2-0trusty) trusty; urgency=high
+
+  * pass full result in pick and place
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Wed, 21 May 2014 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.1-0trusty) trusty; urgency=high
+
+  * fix pyassimp rosdep
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Mon, 19 May 2014 07:00:00 -0000
+
+ros-indigo-moveit-python (0.2.0-0trusty) trusty; urgency=high
+
+  * Initial release after forking from moveit_utils
+  * Contributors: Michael Ferguson
+
+ -- Michael Ferguson <fergs@unboundedrobotics.com>  Mon, 19 May 2014 07:00:00 -0000
+
+
