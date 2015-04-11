@@ -2,6 +2,11 @@
 Changelog for package moveit_python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.12 (2015-04-11)
+-------------------
+* fixup planner id
+* Contributors: Michael Ferguson
+
 0.2.11 (2015-04-08)
 -------------------
 * fix spelling issue in velocity scaling factor
