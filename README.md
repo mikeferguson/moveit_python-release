@@ -1,3 +1,24 @@
+## moveit_python (jade) - 0.2.13-0
+
+The packages in the `moveit_python` repository were released into the `jade` distro by running `/usr/bin/bloom-release -r jade -t jade moveit_python` on `Sat, 16 May 2015 07:54:27 -0000`
+
+The `moveit_python` package was released.
+
+Version of package(s) in repository `moveit_python`:
+- upstream repository: https://github.com/mikeferguson/moveit_python.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.2.13-0`
+
+Versions of tools used:
+- bloom version: `0.5.20`
+- catkin_pkg version: `0.2.7`
+- rosdep version: `0.11.2`
+- rosdistro version: `0.4.1`
+- vcstools version: `0.1.36`
+
+
 ## moveit_python (indigo) - 0.2.13-0
 
 The packages in the `moveit_python` repository were released into the `indigo` distro by running `/usr/bin/bloom-release -r indigo -t indigo moveit_python` on `Sun, 19 Apr 2015 07:04:27 -0000`
