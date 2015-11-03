@@ -2,6 +2,11 @@
 Changelog for package moveit_python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.16 (2015-11-02)
+-------------------
+* fix error message to have proper function name
+* Contributors: Michael Ferguson
+
 0.2.15 (2015-08-20)
 -------------------
 * Fix types in move_group_interface
