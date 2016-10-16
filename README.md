@@ -1,3 +1,26 @@
+## moveit_python (kinetic) - 0.2.17-1
+
+The packages in the `moveit_python` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic moveit_python` on `Sun, 16 Oct 2016 06:08:27 -0000`
+
+The `moveit_python` package was released.
+
+Version of package(s) in repository `moveit_python`:
+
+- upstream repository: https://github.com/mikeferguson/moveit_python.git
+- release repository: https://github.com/mikeferguson/moveit_python-release.git
+- rosdistro version: `0.2.17-0`
+- old version: `0.2.17-0`
+- new version: `0.2.17-1`
+
+Versions of tools used:
+
+- bloom version: `0.5.22`
+- catkin_pkg version: `0.2.7`
+- rosdep version: `0.11.2`
+- rosdistro version: `0.4.4`
+- vcstools version: `0.1.36`
+
+
 ## moveit_python (kinetic) - 0.2.17-0
 
 The packages in the `moveit_python` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic moveit_python` on `Tue, 23 Aug 2016 18:50:50 -0000`
