@@ -1,3 +1,26 @@
+## moveit_python (lunar) - 0.3.0-0
+
+The packages in the `moveit_python` repository were released into the `lunar` distro by running `/usr/bin/bloom-release -r lunar -t lunar moveit_python` on `Wed, 01 Aug 2018 00:10:21 -0000`
+
+The `moveit_python` package was released.
+
+Version of package(s) in repository `moveit_python`:
+
+- upstream repository: https://github.com/mikeferguson/moveit_python.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.3.0-0`
+
+Versions of tools used:
+
+- bloom version: `0.6.6`
+- catkin_pkg version: `0.4.7`
+- rosdep version: `0.12.2`
+- rosdistro version: `0.6.8`
+- vcstools version: `0.1.40`
+
+
 ## moveit_python (melodic) - 0.3.0-0
 
 The packages in the `moveit_python` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -r melodic -t melodic moveit_python` on `Wed, 01 Aug 2018 00:05:38 -0000`
