@@ -33,33 +33,22 @@ from moveit_python import PlanningSceneInterface
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Remove objects from the MoveIt planning scene.")
-    parser.add_argument("name",
-                        nargs="?",
-                        help="Name of object to remove")
-    parser.add_argument("--all",
-                        help="Remove all objects.",
-                        action="store_true")
-    parser.add_argument("--attached",
-                        help="Remove an attached object.",
-                        action="store_true")
+        description="Add a box to the MoveIt planning scene.")
+    parser.add_argument("name", help="Name of the box to add")
+    parser.add_argument("x", type=float, help="X coordinate of center of box")
+    parser.add_argument("y", type=float, help="Y coordinate of center of box")
+    parser.add_argument("z", type=float, help="Z coordinate of center of box")
+    parser.add_argument("size_x", type=float, help="Size of box in x dimension")
+    parser.add_argument("size_y", type=float, help="Size of box in y dimension")
+    parser.add_argument("size_z", type=float, help="Size of box in z dimension")
     args = parser.parse_args()
 
-    if args.all:
-        rospy.init_node("remove_objects")
-        scene = PlanningSceneInterface("base_link")
-        for name in scene.getKnownCollisionObjects():
-            print("Removing %s" % name)
-            scene.removeCollisionObject(name, use_service=False)
-        scene.waitForSync()
-    elif args.name:
-        rospy.init_node("remove_objects")
-        scene = PlanningSceneInterface("base_link")
-        print("Removing %s" % args.name)
-        if args.attached:
-            scene.removeAttachedObject(args.name)
-        else:
-            scene.removeCollisionObject(args.name)
+    if args.name:
+        rospy.init_node("add_box")
+        scene = PlanningSceneInterface("/base_link")
+        print("Adding Box with name: %s" % args.name)
+        scene.addBox(args.name, args.size_x, args.size_y, args.size_z,
+                     args.x, args.y, args.z, use_service=True)
     else:
         parser.print_help()
 
