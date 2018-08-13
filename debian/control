@@ -1,0 +1,12 @@
+Source: ros-lunar-moveit-python
+Section: misc
+Priority: extra
+Maintainer: Michael Ferguson <fergs@unboundedrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-catkin
+Homepage: http://ros.org/wiki/moveit_python
+Standards-Version: 3.9.2
+
+Package: ros-lunar-moveit-python
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-pyassimp, ros-lunar-actionlib, ros-lunar-geometry-msgs, ros-lunar-moveit-msgs, ros-lunar-rospy, ros-lunar-shape-msgs, ros-lunar-tf
+Description: A pure-python interaface to the MoveIt! ROS API.
