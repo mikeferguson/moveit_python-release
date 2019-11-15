@@ -2,6 +2,12 @@
 Changelog for package moveit_python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.3.2 (2019-11-14)
+------------------
+* enable pyassimp for melodic
+* update maintainer email
+* Contributors: Michael Ferguson, Shingo Kitagawa
+
 0.3.1 (2018-08-13)
 ------------------
 * add missing namespace to apply service
