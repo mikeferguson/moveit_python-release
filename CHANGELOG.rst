@@ -2,6 +2,12 @@
 Changelog for package moveit_python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.3.3 (2019-11-21)
+------------------
+* add sphere to planning scene interface
+* add move_group parameter to MoveGroup class
+* Contributors: Michael Ferguson, arwtyxouymz
+
 0.3.2 (2019-11-14)
 ------------------
 * enable pyassimp for melodic
