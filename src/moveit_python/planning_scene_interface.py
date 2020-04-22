@@ -25,7 +25,7 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-import thread, copy
+import threading, copy
 import rospy
 
 try:
@@ -69,7 +69,7 @@ class PlanningSceneInterface(object):
                                           queue_size=10)
         self._apply_service = rospy.ServiceProxy(ns + 'apply_planning_scene', ApplyPlanningScene)
         # track the attached and collision objects
-        self._mutex = thread.allocate_lock()
+        self._mutex = threading.Lock()
         # these are updated based what the planning scene actually contains
         self._attached = list()
         self._collision = list()
@@ -109,6 +109,7 @@ class PlanningSceneInterface(object):
     def sendUpdate(self, collision_object, attached_collision_object, use_service=True):
         ps = PlanningScene()
         ps.is_diff = True
+        ps.robot_state.is_diff = True
         if collision_object:
             ps.world.collision_objects.append(collision_object)
 
