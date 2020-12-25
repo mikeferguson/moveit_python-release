@@ -1,3 +1,26 @@
+## moveit_python (noetic) - 0.3.6-1
+
+The packages in the `moveit_python` repository were released into the `noetic` distro by running `/usr/bin/bloom-release -r noetic -t noetic moveit_python` on `Fri, 25 Dec 2020 15:33:26 -0000`
+
+The `moveit_python` package was released.
+
+Version of package(s) in repository `moveit_python`:
+
+- upstream repository: https://github.com/mikeferguson/moveit_python.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.3.6-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.0`
+- catkin_pkg version: `0.4.20`
+- rosdep version: `0.19.0`
+- rosdistro version: `0.8.2`
+- vcstools version: `0.1.40`
+
+
 ## moveit_python (melodic) - 0.3.5-1
 
 The packages in the `moveit_python` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -r melodic -r melodic moveit_python` on `Fri, 25 Dec 2020 15:21:08 -0000`
