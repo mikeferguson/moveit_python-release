@@ -2,6 +2,13 @@
 Changelog for package moveit_python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.3.5 (2020-12-25)
+------------------
+* use "is None"
+* Fixed a comparison and logical statement order issue. (`#26 <https://github.com/mikeferguson/moveit_python/issues/26>`_)
+* fix pyassimp indices bug (`#27 <https://github.com/mikeferguson/moveit_python/issues/27>`_)
+* Contributors: Karl Kangur, Michael Ferguson, Shingo Kitagawa
+
 0.3.4 (2020-04-22)
 ------------------
 * Fixed error message when removing attached object. (`#25 <https://github.com/mikeferguson/moveit_python/issues/25>`_)
