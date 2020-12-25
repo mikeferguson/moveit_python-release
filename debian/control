@@ -1,0 +1,12 @@
+Source: ros-noetic-moveit-python
+Section: misc
+Priority: optional
+Maintainer: Michael Ferguson <fergs@botnuvo.com>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin
+Homepage: http://ros.org/wiki/moveit_python
+Standards-Version: 3.9.2
+
+Package: ros-noetic-moveit-python
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-pyassimp, ros-noetic-actionlib, ros-noetic-geometry-msgs, ros-noetic-moveit-msgs, ros-noetic-rospy, ros-noetic-shape-msgs, ros-noetic-tf
+Description: A pure-python interaface to the MoveIt! ROS API.
