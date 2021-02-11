@@ -1,4 +1,4 @@
-# Copyright 2011-2019, Michael Ferguson
+# Copyright 2011-2021, Michael Ferguson
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -40,6 +40,11 @@ except:
         # In 16.04, pyassimp is busted
         # https://bugs.launchpad.net/ubuntu/+source/assimp/+bug/1589949
         use_pyassimp = False
+
+try:
+    basestring
+except NameError:
+    basestring = str
 
 from geometry_msgs.msg import Pose, PoseStamped, Point
 from moveit_msgs.msg import CollisionObject, AttachedCollisionObject
@@ -179,10 +184,14 @@ class PlanningSceneInterface(object):
     ## @param name Name of the object
     ## @param solid The solid primitive to add
     ## @param pose A geometry_msgs/Pose for the object
-    def makeSolidPrimitive(self, name, solid, pose):
+    ## @param frame_id Optional frame for the pose, otherwise fixed_frame is used
+    def makeSolidPrimitive(self, name, solid, pose, frame_id=None):
         o = CollisionObject()
         o.header.stamp = rospy.Time.now()
-        o.header.frame_id = self._fixed_frame
+        if frame_id:
+            o.header.frame_id = frame_id
+        else:
+            o.header.frame_id = self._fixed_frame
         o.id = name
         o.primitives.append(solid)
         o.primitive_poses.append(pose)
@@ -227,9 +236,13 @@ class PlanningSceneInterface(object):
         self.sendUpdate(None, a, use_service)
 
     ## @brief Insert a solid primitive into planning scene
+    ## @param name The name of the object
+    ## @param solid An instance of shape_msgs/SolidPrimitive to add
+    ## @param pose A geometry_msgs/Pose for the object
     ## @param use_service If true, update will be sent via apply service
-    def addSolidPrimitive(self, name, solid, pose, use_service=True):
-        o = self.makeSolidPrimitive(name, solid, pose)
+    ## @param frame_id Optional frame for the pose, otherwise fixed_frame is used
+    def addSolidPrimitive(self, name, solid, pose, use_service=True, frame_id=None):
+        o = self.makeSolidPrimitive(name, solid, pose, frame_id)
         self._objects[name] = o
         self.sendUpdate(o, None, use_service)
 
@@ -240,7 +253,8 @@ class PlanningSceneInterface(object):
     ## @param y The y position in fixed frame
     ## @param z The z position in fixed frame
     ## @param use_service If true, update will be sent via apply service
-    def addCylinder(self, name, height, radius, x, y, z, use_service=True):
+    ## @param frame_id Optional frame for the pose, otherwise fixed_frame is used
+    def addCylinder(self, name, height, radius, x, y, z, use_service=True, frame_id=None):
         s = SolidPrimitive()
         s.dimensions = [height, radius]
         s.type = s.CYLINDER
@@ -252,7 +266,7 @@ class PlanningSceneInterface(object):
         ps.pose.position.z = z
         ps.pose.orientation.w = 1.0
 
-        self.addSolidPrimitive(name, s, ps.pose, use_service)
+        self.addSolidPrimitive(name, s, ps.pose, use_service, frame_id)
 
     ## @brief Insert new sphere into planning scene
     ## @param radius The radius of the sphere
@@ -260,7 +274,8 @@ class PlanningSceneInterface(object):
     ## @param y The y position in fixed frame
     ## @param z The z position in fixed frame
     ## @param use_service If true, update will be sent via apply service
-    def addSphere(self, name, radius, x, y, z, use_service=True):
+    ## @param frame_id Optional frame for the pose, otherwise fixed_frame is used
+    def addSphere(self, name, radius, x, y, z, use_service=True, frame_id=None):
         s = SolidPrimitive()
         s.dimensions = [radius]
         s.type = s.SPHERE
@@ -272,7 +287,7 @@ class PlanningSceneInterface(object):
         ps.pose.position.z = z
         ps.pose.orientation.w = 1.0
 
-        self.addSolidPrimitive(name, s, ps.pose, use_service)
+        self.addSolidPrimitive(name, s, ps.pose, use_service, frame_id)
 
     ## @brief Insert new box into planning scene
     ## @param name Name of the object
@@ -283,7 +298,8 @@ class PlanningSceneInterface(object):
     ## @param y The y position in fixed frame
     ## @param z The z position in fixed frame
     ## @param use_service If true, update will be sent via apply service
-    def addBox(self, name, size_x, size_y, size_z, x, y, z, use_service=True):
+    ## @param frame_id Optional frame for the pose, otherwise fixed_frame is used
+    def addBox(self, name, size_x, size_y, size_z, x, y, z, use_service=True, frame_id=None):
         s = SolidPrimitive()
         s.dimensions = [size_x, size_y, size_z]
         s.type = s.BOX
@@ -328,8 +344,9 @@ class PlanningSceneInterface(object):
 
     ## @brief Insert new cube to planning scene
     ## @param use_service If true, update will be sent via apply service
-    def addCube(self, name, size, x, y, z, use_service=True):
-        self.addBox(name, size, size, size, x, y, z, use_service)
+    ## @param frame_id Optional frame for the pose, otherwise fixed_frame is used
+    def addCube(self, name, size, x, y, z, use_service=True, frame_id=None):
+        self.addBox(name, size, size, size, x, y, z, use_service, frame_id)
 
     ## @brief Send message to remove object
     ## @param use_service If true, update will be sent via apply service
