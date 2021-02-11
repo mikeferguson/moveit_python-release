@@ -2,6 +2,21 @@
 Changelog for package moveit_python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.4.1 (2021-02-11)
+------------------
+* add support for objects not in fixed_frame
+* Contributors: Michael Ferguson
+
+0.4.0 (2021-01-17)
+------------------
+* various fixes for noetic/python3 (`#28 <https://github.com/mikeferguson/moveit_python/issues/28>`_)
+* Contributors: Michael Ferguson
+
+0.3.6 (2020-12-25)
+------------------
+* update package.xml for python3 support
+* Contributors: Michael Ferguson
+
 0.3.5 (2020-12-25)
 ------------------
 * use "is None"
