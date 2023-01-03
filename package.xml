@@ -2,7 +2,7 @@
 <package format="3">
 
   <name>moveit_python</name>
-  <version>0.4.4</version>
+  <version>0.4.5</version>
   <description>
     A pure-python interaface to the MoveIt! ROS API.
   </description>
@@ -12,6 +12,9 @@
   <url>http://ros.org/wiki/moveit_python</url>
   
   <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend condition="$ROS_PYTHON_VERSION == 2">python-setuptools</build_depend>
+  <build_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</build_depend>
 
   <exec_depend>actionlib</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
